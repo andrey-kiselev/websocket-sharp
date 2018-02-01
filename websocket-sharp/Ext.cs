@@ -49,7 +49,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.IO.Compression;
+//using System.IO.Compression;
+using Ionic.Zlib;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -118,6 +119,7 @@ namespace WebSocketSharp
         return input.decompressToArray ();
     }
 
+		//https://stackoverflow.com/questions/20850703/cant-inflate-with-c-sharp-using-deflatestream
     private static MemoryStream decompress (this Stream stream)
     {
       var output = new MemoryStream ();
